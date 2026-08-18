@@ -32,7 +32,7 @@ EXPLANATION 0:
 """
 
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent))
@@ -51,6 +51,22 @@ TEST_CASES = [
 def top_k_frequent(nums: list, k: int) -> list:
     # Hint: Use collections.Counter(nums).most_common(k)
     pass
+    m={}
+    for ele in nums:
+        m[ele]=m.get(ele,0)+1
+    d=defaultdict(set)
+    for key , val in m.items():
+        d[val].add(key)
+    mf= dict(sorted(d.items()))
+    ans=[]
+    for row in reversed(mf.values()):
+        for v in row:
+            ans.append(v)
+            k-=1
+            if(k==0):
+                return ans
+    return ans
+
 
 
 def solve():

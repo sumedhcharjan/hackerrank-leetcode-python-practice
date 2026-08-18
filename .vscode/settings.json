@@ -1,12 +1,26 @@
 {
   "editor.inlineSuggest.enabled": false,
-  "editor.quickSuggestions": false,
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "off"
+  },
   "editor.suggestOnTriggerCharacters": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "off",
   "editor.parameterHints.enabled": false,
   "editor.wordBasedSuggestions": "off",
+  "editor.snippetSuggestions": "none",
+  "editor.suggest.showWords": false,
+  "editor.suggest.showSnippets": false,
+  "editor.suggest.showMethods": false,
+  "editor.suggest.showFunctions": false,
+  "editor.suggest.showKeywords": false,
   "github.copilot.enable": {
     "*": false
-  }
+  },
+  "github.copilot.inlineSuggest.enable": false,
+  "antigravity.inlineCompletion.enabled": false,
+  "antigravity.autocomplete.enabled": false,
+  "gemini.inlineCompletion.enabled": false
 }

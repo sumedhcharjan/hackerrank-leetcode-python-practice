@@ -51,6 +51,19 @@ TEST_CASES = [
 def product_except_self(nums: list) -> list:
     # Hint: Compute prefix products left-to-right, then multiply suffix products right-to-left
     pass
+    pre=[1]
+    for i in nums:
+        pre.append(pre[len(pre)-1]*i)
+    suf=[1]
+    for i in reversed(nums):
+        suf.append(suf[len(suf)-1]*i)
+    ans=[1]*len(nums)
+    for idx,i in enumerate(nums):
+        ans[idx]=pre[idx]*suf[len(suf)-2-idx]
+    return ans
+    
+    
+    
 
 
 def solve():

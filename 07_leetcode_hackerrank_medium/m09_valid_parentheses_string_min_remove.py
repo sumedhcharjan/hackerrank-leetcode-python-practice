@@ -58,6 +58,18 @@ TEST_CASES = [
 def min_add_to_make_valid(s: str) -> int:
     # Hint: Keep track of open count balance and needed closing/opening brackets
     pass
+    st=[]
+    for char in s:
+        if len(st)==0:
+            st.append(char)
+            continue
+        if(st[-1]=='(' and char==')'):
+            st.pop()
+        else:
+            st.append(char)
+    return len(st)
+        
+
 
 
 def solve():

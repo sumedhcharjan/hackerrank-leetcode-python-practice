@@ -66,7 +66,36 @@ TEST_CASES = [
 def is_valid_sudoku(board: list) -> bool:
     # Hint: Use sets for rows, cols, and 3x3 boxes (r // 3, c // 3)
     pass
+    for row in board:
+        m={}
+        for ele in row:
+            if ele == ".":
+                continue
+            if ele in m:
+                return False
+            m[ele]=m.get(ele,0)+1
+        m.clear()
 
+    for i in range(len(board)):
+        m={}
+        for j in range(len(board)):
+            if board[j][i] == ".":
+                continue
+            if board[j][i] in m:
+                return False
+            m[board[j][i]]=m.get(board[j][i],0)+1
+        m.clear()
+
+    for i in range(len(board)):
+        m={}
+        for j in range(len(board)):
+            if board[j//3][i//3] == ".":
+                continue
+            if board[j//3][i//3] in m:
+                return False
+            m[board[j//3][i//3]]=m.get(board[j//3][i//3],0)+1
+        m.clear()
+    return True    
 
 def solve():
     board = []
