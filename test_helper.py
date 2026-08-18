@@ -109,7 +109,7 @@ def run_tests(solve_func: Callable, test_cases: List[Dict[str, str]], problem_ti
 
     print(f"\n{BOLD}{'='*60}{RESET}")
     if passed_count == total_cases:
-        print(f" {BOLD}{GREEN}CONGRATULATIONS! All {passed_count}/{total_cases} test cases passed! 🎉{RESET}")
+        print(f" {BOLD}{GREEN}CONGRATULATIONS! All {passed_count}/{total_cases} test cases passed! [SUCCESS]{RESET}")
     else:
         print(f" {BOLD}{RED}Result: {passed_count}/{total_cases} test cases passed.{RESET} Keep trying!")
     print(f"{BOLD}{'='*60}{RESET}\n")

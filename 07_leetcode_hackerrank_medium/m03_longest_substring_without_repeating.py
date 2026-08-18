@@ -49,7 +49,17 @@ TEST_CASES = [
 def length_of_longest_substring(s: str) -> int:
     # Hint: Use Sliding Window algorithm with a hash set or dict of last seen index
     pass
-
+    m={}
+    left=int(0)
+    maxlen=float("-inf")
+    for i,char in enumerate(s):
+        if char in m:
+            left=m[char]+1
+        m[char]=i
+        maxlen=max(maxlen,i-left+1)
+    return maxlen
+    
+    
 
 def solve():
     s = input().strip()
