@@ -16,6 +16,7 @@ d:\py\
 ├── 06_algorithms_and_math\     # Itertools Product, Permutations, Merge the Tools
 ├── 07_leetcode_hackerrank_medium\ # Medium Problems (Two Sum II, Group Anagrams, 3Sum, Product Except Self, etc.)
 ├── 08_linked_lists_trees_and_recursion\ # Linked Lists, Binary Trees, BSTs, Recursion & Backtracking
+├── 09_dp_greedy_and_heaps\    # Dynamic Programming, Greedy Algorithms, Min/Max-Heaps (heapq)
 ├── test_helper.py              # Test suite execution engine
 ├── run_tests.py                # Master scoreboard and progress tracker
 └── README.md
