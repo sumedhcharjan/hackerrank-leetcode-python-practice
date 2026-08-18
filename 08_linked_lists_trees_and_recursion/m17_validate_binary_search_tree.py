@@ -59,7 +59,17 @@ class TreeNode:
 
 def is_valid_bst(root: TreeNode) -> bool:
     # Hint: Use helper function valid(node, low_bound, high_bound)
-    pass
+    
+    def help(node,low,up) -> bool:
+        if(node==None):
+            return True
+        if(node.val<low or node.val>up):
+            return False
+        
+        return help(node.left,low,node.val) and help(node.right,node.val,up)
+
+    return help(root,float('-inf'),float('inf'))
+
 
 
 def build_tree(level_order: list) -> TreeNode:

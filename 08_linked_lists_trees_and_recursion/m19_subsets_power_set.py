@@ -61,6 +61,20 @@ TEST_CASES = [
 def subsets(nums: list) -> list:
     # Hint: Use backtracking recursion: backtrack(index, current_path)
     pass
+    ans=[]
+    def help(idx:int, combi:list) -> None:
+        if(idx>=len(nums)):
+            ans.append(combi.copy())
+            return
+
+        help(idx+1,combi)
+        combi.extend([nums[idx]])
+        help(idx+1,combi)
+        combi.pop()
+        return
+    help(0,[])
+    return ans
+
 
 
 def solve():

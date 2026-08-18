@@ -63,8 +63,19 @@ class TreeNode:
 
 
 def lowest_common_ancestor(root: TreeNode, p: int, q: int) -> TreeNode:
-    # Hint: Use BST property! If p and q both < root.val, go left. If both >, go right. Else root is LCA.
-    pass
+    if root is None:
+        return None
+
+    if root.val == p or root.val == q:
+        return root
+
+    left = lowest_common_ancestor(root.left, p, q)
+    right = lowest_common_ancestor(root.right, p, q)
+
+    if left and right:
+        return root
+
+    return left or right
 
 
 def build_tree(level_order: list) -> TreeNode:

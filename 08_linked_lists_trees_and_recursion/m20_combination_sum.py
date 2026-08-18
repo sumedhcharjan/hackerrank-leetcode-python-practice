@@ -60,6 +60,28 @@ TEST_CASES = [
 def combination_sum(candidates: list, target: int) -> list:
     # Hint: Backtracking with backtrack(index, current_sum, current_combination)
     pass
+    ans=[]
+    candidates.sort()
+    def help(idx,ans,candidates,target,combi) -> None:
+        if target==0:
+            ans.append(combi.copy())
+            return
+        if idx>=len(candidates):
+            return
+        i=int(0)
+        while(target-i*candidates[idx]>=0):
+            combi.extend([candidates[idx]]*i)
+            help(idx+1,ans,candidates,target-i*candidates[idx],combi)
+            if i>0:
+                del combi[-i:]
+            i+=1
+        
+        return
+    
+    help(0,ans,candidates,target,[])
+    return ans
+
+
 
 
 def solve():
